@@ -1,12 +1,12 @@
 # setwd("/Users/thanhtnguyen/Coursera/DevelopingDataProduct/Ass")
-
+library(e1071)
 library(shiny)
 library(caret)
 library(RCurl)
 
 # Load the Titanic dataset
-url <- getURL('https://www.dropbox.com/s/gzbk5gsga1rtdu0/train.csv?dl=1')
-Titanic = read.csv(test = url)
+url <- getURL('https://raw.githubusercontent.com/R-R-/CourseraDevelopingDataProduct/master/train.csv')
+Titanic = read.csv(text = url)
 goodColumnsNoLabel <- c("Pclass", "Sex", "Age")
 goodColumns <- c("Survived", goodColumnsNoLabel)
 Titanic <- Titanic[, goodColumns]
